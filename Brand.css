@@ -1,0 +1,272 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'TT Lakes', sans-serif;
+    overflow: hidden;
+
+}
+
+@font-face {
+    font-family: TT Lakes;
+    src: url(assets/TTLakes/TTLakes-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: TT Lakes;
+    src: url(assets/TTLakes/TTLakes-Medium.ttf);
+    font-weight: 500;
+}
+
+.brand-block {
+    background-color: #f8f8f8;
+    width: 100vw;
+    height: 1024px;
+}
+
+button {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.brand-block__background {
+    background: linear-gradient(to right, #f8f8f8, #fff);
+    width: 100vw;
+    height: 80px;
+}
+
+.brand-block__container {
+    padding-left: 16px;
+}
+
+.brand-block__header {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+
+.brand-block__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d9fff5;
+    z-index: 1;
+}
+
+.brand-block__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #7e7e82;
+}
+
+.brand-block__grid {
+    margin-top: 0px;
+    padding: 0;
+}
+
+.brand-block__grid {
+    display: none;
+    overflow-x: auto;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.brand-block__grid::-webkit-scrollbar {
+    display: none;
+}
+
+.swiper-wrapper {
+    width: 240px;
+    height: 72px;
+    overflow: visible;
+    cursor: grab;
+}
+
+.swiper {
+    position: relative;
+    overflow: visible;
+    width: 240px;
+    height: 105px;
+
+}
+
+.swiper-wrapper:active {
+    cursor: grabbing;
+}
+
+.swiper-slide.brand-block__card.swiper-slide-active {
+    display: flex;
+    width: 240px;
+    height: 72px;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #444;
+}
+
+.brand-block__card {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    max-width: 240px;
+    height: 72px;
+    border-radius: 6px;
+    border-color: #eaeaea;
+    border-width: 1px;
+    background-color: #fff;
+    min-width: 240px;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.brand-block__card img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    image-rendering: auto;
+    display: block;
+    margin: 0;
+}
+
+.slider-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.slider-indicator__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: inline-block;
+}
+
+.slider-indicator__dot--active {
+    background-color: #b5b6bc;
+}
+
+.brand-block__toggle {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .swiper.brand-block__swiper {
+        display: none;
+    }
+
+    .brand-block__header {
+        display: flex;
+        height: 56px;
+        min-width: 768px;
+    }
+
+    .brand-block__container {
+        padding: 0 24px;
+    }
+
+    .brand-block__background {
+        background: linear-gradient(to right, #f8f8f8, #fff);
+        width: 100vw !important;
+        height: 56px;
+    }
+
+    .slider-indicator {
+        display: none;
+    }
+
+    .brand-block__toggle {
+        display: flex;
+        align-items: center;
+        font-family: 'TT Lakes', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        gap: 9px;
+        margin-top: 24px;
+    }
+
+    .brand-block__toggle img {
+        transform: rotate(0deg);
+    }
+
+    .brand-block__toggle[aria-expanded="true"] img {
+        transform: rotate(180deg);
+    }
+
+    .brand-block__grid {
+        display: grid;
+        overflow: visible;
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: 24px;
+        padding-left: 0;
+        padding-top: 24px;
+    }
+
+    .brand-block__grid--collapsed .brand-block__card:nth-child(n+7) {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1120px) {
+    .brand-block__background {
+        background: linear-gradient(to right, #f8f8f8, #fff);
+        width: 1120px;
+        height: 56px;
+    }
+
+    .swiper.brand-block__swiper {
+        display: none;
+    }
+
+    .brand-block__card {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        max-width: 240px;
+        height: 72px;
+        border-radius: 6px;
+        border-color: #eaeaea;
+        border-width: 1px;
+        background-color: #fff;
+        min-width: 240px;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .brand-block__grid--collapsed .brand-block__card:nth-child(n+7) {
+        display: flex;
+    }
+
+    .brand-block__grid--collapsed .brand-block__card:nth-child(n+9) {
+        display: none;
+    }
+
+    .brand-block__grid {
+        display: grid;
+        overflow: visible;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0px;
+        margin-top: 24px;
+        gap: 32px;
+    }
+
+    .brand-block__container {
+        padding: 0 32px 0 32px;
+    }
+}
